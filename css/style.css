@@ -1,0 +1,303 @@
+/*paleta de colores*/
+:root{
+    --primario: #9C27B0;
+    --primarioscuro: #89119D;
+    --segundario: #FFCE00;
+    --segundaarioscuro: rgb(233,287,2);
+    --blanco:#fff;
+    --negro:#000;
+    --fuenteprincipal: 'Staatliches', cursive;
+}
+/*box-sizing: border-box*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*variables grobales*/
+
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;/*tamaño letra 16px*/
+    line-height: 1.5;/*interlineado*/
+}
+
+p{
+    font-size: 1.8rem; 
+    font-family: arial, Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,h2,h3{
+    text-align: center;
+    color: var(--segundario);
+    font-family: Arial, Helvetica, sans-serif;
+}   
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size:  3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/*comenzandoa  darle estilos a la pagina como tal de posicionamiento*/
+/*header*/
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    margin: 3rem 0;
+} 
+
+/*nav*/
+.navegacion{
+    background-color: var(--primarioscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;/*separacion de  los elementos internos   */
+}
+
+.navegacion__enlace{
+    font-family: var(--fuenteprincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--segundario);
+}
+
+.footer{
+    background-color:var(--primarioscuro) ;
+    padding: .5rem 0;
+    margin: 2rem 0;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuenteprincipal);
+    font-size: 2.2rem;
+
+}
+
+
+.contenedor__texto{
+    text-align: center;
+    color: var(--segundario);
+
+
+}
+.contenedor{
+
+    
+}
+.grid{
+    display: grid;
+    gap: 2rem;
+    
+}
+
+@media(min-width: 768px){
+    .grid{
+       
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.grid{
+    grid-template-columns: repeat(2 , 1fr);
+}
+
+
+
+
+/*productos estilos*/
+
+
+.producto{
+    background-color: var(--primarioscuro);
+    padding: .5rem;
+    
+}
+.producto__imagen{
+    width: 100%;
+}
+.producto__informacion{
+
+}
+.producto__nombre{
+    font-size: 4rem;
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--segundario);
+}
+
+
+.producto__nombre,.producto__precio{
+    font-family: var(--fuenteprincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+
+/*posicionamiento de graficos dentro del grid tienda*/
+.grafico{
+    min-height: 30rem;
+    background-repeat: none; 
+    background-size: cover;
+    grid-column: 1/3;
+}
+
+.grafico--camisa{
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8/9;
+}
+@media(min-width :768px) {
+    .grafico--node{
+        grid-column: 2/4;
+        grid-row: 5/6;
+        background-size: cover;
+    }
+        
+}
+/*NOSOTROS*/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+ }
+
+@media(min-width:768px){
+    .nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+       }
+}
+
+.nosotros__contenido{
+
+}
+.nosotros__imagen{
+    grid-row: 1/2;
+    width: 100%;
+}
+
+@media(min-width:768px){
+    .nosotros__imagen{
+        grid-column: 2/3;
+    }
+    
+}
+
+/*NOSOTROS. porque comprar*/
+
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+
+@media(min-width:768px){
+
+    .bloques{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) ;
+        gap: 2rem;
+    
+    }
+    
+}
+
+.bloque{
+    text-align: center;
+    background-color: var(--primarioscuro);
+}
+
+.bloque img{
+    width: 100%;/*tamaño completo de la imagen*/
+}
+
+.bloque__titulo{
+    margin: 0;
+}
+
+/*pagina del producto...*/
+@media(min-width: 768px){
+    .contenedorr{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr); 
+        gap: 2rem;
+    }
+}
+
+.formulario{
+
+}
+.formulario__campo{
+
+    border: solid 1rem var(--primarioscuro);
+    border-color: var(--primarioscuro);
+    background-color: var(--primario);
+    color: var(--blanco);
+
+}
+.formulario__submit{
+    background-color: var(--segundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuenteprincipal);
+    padding: 2rem;
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--segundaarioscuro);
+}
+
+
+.camisa__contenido{
+    font-family: var(--fuenteprincipal);
+
+}
+
+.camisa__imagen{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
